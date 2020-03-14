@@ -211,7 +211,7 @@ blockquote{
     }
 	}
 .site-header__logo:hover{
-            color: lightgreen;
+            color: #0079bf;
             text-decoration: none;
         }
 .site-header--privacy{
@@ -308,6 +308,10 @@ blockquote{
             }
 .lang-switcher--header .lang-dropdown:focus{
                 outline: none;
+            }
+.lang-switcher--header .lang-dropdown:hover{
+                background-color: #0079bf;
+                border-color: #0079bf;
             }
 .site-content{
     background-color: #fff;

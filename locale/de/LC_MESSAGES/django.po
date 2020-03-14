@@ -125,7 +125,7 @@ msgstr "Kontakt"
 
 #: web/templates/web/index.html:9
 msgid "A simple tool to analyze your Whatsapp conversations"
-msgstr "Analysiere Whatsapp Chats schnell und einfach"
+msgstr "Schnell und Einfach Whatsapp Chats analysieren"
 
 #: web/templates/web/index.html:15
 msgid "Choose a file"
@@ -173,7 +173,7 @@ msgstr "6. Hier hochladen"
 
 #: web/templates/web/index.html:63
 msgid "Frequently Asked Questions"
-msgstr "Häufig gestellte Fragen"
+msgstr "FAQ"
 
 #: web/templates/web/index.html:69
 msgid "Do you store my chat on your server?"
@@ -183,11 +183,11 @@ msgstr "Wird mein Chat auf dem Server gespeichert?"
 msgid ""
 "No. Your file will be deleted from the server immediately after you upload "
 "it. "
-msgstr "Nein. Deine Datei wird sofort nach der Analyse automatisch gelöscht"
+msgstr "Nein, die Datei wird sofort nach der Analyse automatisch gelöscht"
 
 #: web/templates/web/index.html:84
 msgid "What do I need to consider before uploading my file?"
-msgstr "Was muss ich beachten bevor ich meine Datei hochlade?"
+msgstr "Was muss ich vor dem hochladen beachten?"
 
 #: web/templates/web/index.html:90
 msgid ""
@@ -207,7 +207,7 @@ msgid ""
 "upload your file again."
 msgstr ""
 "Nachdem die Informationen bei uns nicht gespeichert werden, ist das nicht "
-"möglich. Natürlich kannst du den Chat aber erneut hochladen."
+"möglich. Du kannst den Chat aber noch einmal hochladen."
 
 #: web/templates/web/index.html:112
 msgid "There is something wrong with my report - what can I do?"
