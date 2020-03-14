@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'd238924298fh2293232rh0')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['whatsappanalyse.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -71,7 +71,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -123,4 +122,4 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
