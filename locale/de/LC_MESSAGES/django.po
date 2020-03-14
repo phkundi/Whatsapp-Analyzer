@@ -177,7 +177,7 @@ msgstr "Häufig gestellte Fragen"
 
 #: web/templates/web/index.html:69
 msgid "Do you store my chat on your server?"
-msgstr "Wird mein Chat auf eurem Server gespeichert?"
+msgstr "Wird mein Chat auf dem Server gespeichert?"
 
 #: web/templates/web/index.html:76
 msgid ""
