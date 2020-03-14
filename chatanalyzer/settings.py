@@ -122,4 +122,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# django_heroku.settings(locals())
+on_heroku = (os.environ.get('ON_HEROKU') == 'True')
+
+if on_heroku:
+    django_heroku.settings(locals())

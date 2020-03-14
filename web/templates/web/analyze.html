@@ -288,6 +288,8 @@
     <script>
       $(".site-header__counter__text").css('color', '#0079bf');
       $(".site-header__logo").css('color', '#0079bf');
+      $("#lang-switcher").css('display', 'none');
+      
       var jsonData = JSON.parse('{{json_data | escapejs}}'.replace(/\bNaN\b/g, "null"));
 
       // Indicate start & end date
