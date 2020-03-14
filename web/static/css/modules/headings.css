@@ -1,0 +1,23 @@
+.heading{
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: $headingFont;
+
+    &--white{
+        color: white;
+    }
+
+    &--md{
+        font-size: 2rem;
+    }
+
+    &--huge{
+        font-size: 9rem;
+    }
+
+    &--blue{
+        color: $secondaryBlue;
+    }
+
+
+}

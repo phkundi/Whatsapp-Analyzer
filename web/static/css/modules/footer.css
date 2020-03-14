@@ -1,0 +1,17 @@
+.footer{
+    display: none;
+
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: $primary;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+
+    a{
+        color: $primary;
+    }
+}

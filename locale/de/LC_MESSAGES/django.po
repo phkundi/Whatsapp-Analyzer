@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 15:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: web/templates/web/analyze.html:11
+msgid "Chat Report"
+msgstr "Chat Bericht"
+
+#: web/templates/web/analyze.html:24
+msgid "Total Messages"
+msgstr "Nachrichten Gesamt"
+
+#: web/templates/web/analyze.html:41
+msgid "Average Daily Messages"
+msgstr "Durchschnittliche Nachrichten pro Tag"
+
+#: web/templates/web/analyze.html:58
+msgid "Total Words"
+msgstr "Worte Gesamt"
+
+#: web/templates/web/analyze.html:79
+msgid "Average Words per Message"
+msgstr "Durchschnittliche Worte pro Nachricht"
+
+#: web/templates/web/analyze.html:98
+msgid "Top 10 Authors"
+msgstr "Top 10 Autoren"
+
+#: web/templates/web/analyze.html:116
+msgid "Messages By Author"
+msgstr "Nachrichten pro Autor"
+
+#: web/templates/web/analyze.html:123 web/templates/web/analyze.html:200
+#: web/templates/web/analyze.html:221 web/templates/web/analyze.html:242
+#: web/templates/web/analyze.html:263
+msgid "Rank"
+msgstr "Rang"
+
+#: web/templates/web/analyze.html:124
+msgid "Name"
+msgstr "Name"
+
+#: web/templates/web/analyze.html:125 web/templates/web/base.html:39
+#: web/templates/web/index.html:19
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: web/templates/web/analyze.html:140
+msgid "Most Active Years"
+msgstr "Aktivste Jahre"
+
+#: web/templates/web/analyze.html:152
+msgid "Most Active Months"
+msgstr "Aktivste Monate"
+
+#: web/templates/web/analyze.html:163
+msgid "Most Active Weekdays"
+msgstr "Aktivste Tage"
+
+#: web/templates/web/analyze.html:178
+msgid "Most Active Hours"
+msgstr "Aktivste Stunden"
+
+#: web/templates/web/analyze.html:193
+msgid "Most Active Days Ever"
+msgstr "Tage mit den meisten Nachrichten"
+
+#: web/templates/web/analyze.html:201 web/templates/web/analyze.html:222
+#: web/templates/web/analyze.html:243 web/templates/web/analyze.html:264
+msgid "Date"
+msgstr "Datum"
+
+#: web/templates/web/analyze.html:202 web/templates/web/analyze.html:223
+#: web/templates/web/analyze.html:244 web/templates/web/analyze.html:265
+msgid "Count"
+msgstr "Anzahl"
+
+#: web/templates/web/analyze.html:214
+msgid "Least Active Days Ever"
+msgstr "Tage mit den wenigsten Nachrichten"
+
+#: web/templates/web/analyze.html:235
+msgid "Most Common Messages"
+msgstr "Häufigste Nachrichten"
+
+#: web/templates/web/analyze.html:256
+msgid "Most Common Emojis"
+msgstr "Häufigste Emojis"
+
+#: web/templates/web/analyze.html:276
+msgid "Yearly Breakdown"
+msgstr "Aktivität pro Jahr"
+
+#: web/templates/web/base.html:39
+msgid "Analysis Counter"
+msgstr "Bereits analysiert"
+
+#: web/templates/web/base.html:39 web/templates/web/index.html:19
+msgid "Chats"
+msgstr "Chats"
+
+#: web/templates/web/base.html:70
+msgid "Privacy Policy"
+msgstr "Datenschutz"
+
+#: web/templates/web/base.html:73
+msgid "Contact"
+msgstr "Kontakt"
+
+#: web/templates/web/index.html:9
+msgid "A simple tool to analyze your Whatsapp conversations"
+msgstr "Analysiere Whatsapp Chats schnell und einfach"
+
+#: web/templates/web/index.html:15
+msgid "Choose a file"
+msgstr "Datei auswählen"
+
+#: web/templates/web/index.html:18
+msgid "Upload"
+msgstr "Hochladen"
+
+#: web/templates/web/index.html:19
+msgid "Already Analyzed"
+msgstr "Bereits Analysiert"
+
+#: web/templates/web/index.html:22
+msgid "Please wait, this may take a moment"
+msgstr "Bitte warten, das kann einen Moment dauern"
+
+#: web/templates/web/index.html:39
+msgid "How does it work"
+msgstr "Wie funktioniert es?"
+
+#: web/templates/web/index.html:42
+msgid "1. Open Whatsapp Chat"
+msgstr "1. Whatsapp Chat öffnen"
+
+#: web/templates/web/index.html:45
+msgid "2. Open Chat Information"
+msgstr "2. Chat Info öffnen"
+
+#: web/templates/web/index.html:48
+msgid "3. Select Export Chat"
+msgstr "3. Chat Exportieren auswählen"
+
+#: web/templates/web/index.html:51
+msgid "4. Select \"Without Media\""
+msgstr "4. \"Ohne Medien\" auswählen"
+
+#: web/templates/web/index.html:54
+msgid "5. Email file to yourself"
+msgstr "5. Schicke die Datei an dich selbst"
+
+#: web/templates/web/index.html:57
+msgid "6. Upload here"
+msgstr "6. Hier hochladen"
+
+#: web/templates/web/index.html:63
+msgid "Frequently Asked Questions"
+msgstr "Häufig gestellte Fragen"
+
+#: web/templates/web/index.html:69
+msgid "Do you store my chat on your server?"
+msgstr "Wird mein Chat auf eurem Server gespeichert?"
+
+#: web/templates/web/index.html:76
+msgid ""
+"No. Your file will be deleted from the server immediately after you upload "
+"it. "
+msgstr "Nein. Deine Datei wird sofort nach der Analyse automatisch gelöscht"
+
+#: web/templates/web/index.html:84
+msgid "What do I need to consider before uploading my file?"
+msgstr "Was muss ich beachten bevor ich meine Datei hochlade?"
+
+#: web/templates/web/index.html:90
+msgid ""
+"Your results will be better if you have everyone in your conversation saved "
+"as a contact."
+msgstr ""
+"Die Ergebnisse sind aussagekräftiger wenn du jeden aus dem Chat als Kontakt "
+"eingespeichert hast."
+
+#: web/templates/web/index.html:98
+msgid "Can I revisit my report?"
+msgstr "Kann ich meinen Bericht öfters aufrufen?"
+
+#: web/templates/web/index.html:104
+msgid ""
+"Since your information will not be saved, this is not possible unless you "
+"upload your file again."
+msgstr ""
+"Nachdem die Informationen bei uns nicht gespeichert werden, ist das nicht "
+"möglich. Natürlich kannst du den Chat aber erneut hochladen."
+
+#: web/templates/web/index.html:112
+msgid "There is something wrong with my report - what can I do?"
+msgstr ""
+"Etwas scheint mit meinem Bericht nicht zu stimmen - was kann ich machen?"
+
+#: web/templates/web/index.html:118
+msgid ""
+"Please use the contact form to explain your issue. This is a work in "
+"progress so any feedback is welcome."
+msgstr ""
+"Klicke unten auf Kontakt um eine Email zu schicken, in welcher du dein "
+"Problem erklärst."
+
+#~ msgid ""
+#~ "Your results will be better if you have everyone in your conversation "
+#~ "saved as a contact. Also, if you want your chat to show up in the ranking "
+#~ "for the biggest chats (see below), you need to add the name of the chat."
+#~ msgstr ""
+#~ "Die Ergebnisse sind aussagekräftiger, wenn du jeden im Chat als Kontakt "
+#~ "eingespeichert hast."

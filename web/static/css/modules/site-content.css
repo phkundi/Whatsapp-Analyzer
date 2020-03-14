@@ -1,0 +1,193 @@
+.site-content{
+    background-color: #fff;
+    padding-bottom: 100px;
+}
+
+.frontpage{
+    width: 100%;
+    margin: 0 auto;
+
+    .intro{
+        padding-top: 5vh;
+
+        .heading{
+            font-size: 2rem;
+        }
+
+        @mixin atMedium{
+            .heading{
+                font-size: 3rem;
+            }
+        }
+
+        @mixin atLarge{
+            padding-top: 10vh;
+            height: 90vh;
+        }
+    }
+
+    #frontpage_img{
+        display: none;
+
+        @mixin atLarge{
+            display: block;
+            
+            img{
+                width: unset;            
+            }
+        }
+    }
+
+    .top-section{
+        #upload{
+            width: 100%;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: $mainColor;
+        
+        
+            input[type='file']{
+                display: none;
+            }
+
+            .chat-name{
+                display: block;
+                margin: 10px auto;
+                padding: 10px 5px;
+                text-align: center;
+                border-radius: 15px;
+                outline: none;
+                border: 1px solid $primary;
+                width: 30%;
+                font-size: 0.8rem;
+
+                &::placeholder{
+                    color: rgba($primary, 0.8);
+                }
+            }
+        
+            label{
+                padding: 10px 20px;
+                font-weight: 500;
+                font-size: 1.2rem;
+                border-radius: 15px;
+                cursor: pointer;
+                width: 30%;
+            }
+        
+            button{
+                display: block;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding: 15px 30px;
+                font-weight: 500;
+                border-radius: 10px;
+                width: 30%;
+            }
+
+            .analysis-counter{
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+        }
+    }
+    
+    
+    
+    .instructions{
+        padding: 50px;
+        text-align: justify;
+        background-color: $mainColor;
+
+        @mixin atLarge{
+            padding: 0 100px;
+        }
+        
+        .how-to{
+            border-right: 2px solid white;
+
+            &__card-deck{
+                display: flex;
+                flex-wrap: wrap;
+
+                &__card{
+                    background-color: white;
+                    padding: 20px 10px;
+                    width: 45%;
+                    border-radius: 15px;
+                    margin: 10px auto;
+                    box-shadow: $boxShadow;
+
+                    &:hover{
+                        color: black;
+                        border-color: black;
+                    }
+
+                    h3{
+                        font-weight: 700;
+                        text-align: center;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .faq{
+            padding-top: 90px;
+
+            @mixin atLarge{
+                padding-top: 0;
+            }
+            .accordion{
+
+                .card-header{
+                    background-color: transparent;
+                    
+                    button{
+                        font-weight: 600;
+                    }
+                }
+
+                .card-body{
+                    color: #444;
+                }
+            }
+        }
+    }
+
+    .ranking{
+        margin-top: 50px;
+        padding: 100px 0;
+        background-color: $primary;
+
+        &__table{
+            margin-top: 40px;
+            color: white;
+        }
+    }
+}
+
+.analysis{
+    table{
+        font-size: 0.8rem;
+    }
+
+    @mixin atMedium{
+        padding: 100px;
+
+        table{
+            font-size: 1rem;
+        }
+    }
+
+    .years{
+        .card{
+            box-shadow: $boxShadow;
+        }
+        .card-header{
+            background-color: $secondaryBlue;
+            color: white;
+        }
+    }
+}

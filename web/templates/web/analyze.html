@@ -1,0 +1,306 @@
+{% extends 'web/base.html' %}
+{% load i18n %}
+{% block content %}
+
+<div class="analysis" id="analysis">
+  <!-- Begin Page Content -->
+  <div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-blue">{{chat_name}} | {% trans 'Chat Report' %} <span id="start-date"></span> - <span id="end-date"></span></h1>
+      <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Download Report</a> -->
+    </div>
+
+          <!-- Content Row -->
+    <div class="row">
+
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-blue text-uppercase mb-1">{% trans 'Total Messages' %}</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-messages">{{ Total_Messages }}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-comments fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-blue text-uppercase mb-1">{% trans 'Average Daily Messages' %}</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" id="average-daily">{{ Average_Daily }}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-blue text-uppercase mb-1">{% trans 'Total Words' %}</div>
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="total-words">{{ Total_Words }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pending Requests Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-blue text-uppercase mb-1">{% trans 'Average Words per Message' %}</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" id="average-words-message">{{ Average_Words_Message }}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fa fa-align-left fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+      <!-- Area Chart -->
+      <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Top 10 Authors' %}</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="top_10_authors">
+
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="col-xl-4 col-lg-5 align-items-strech">
+        <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Messages By Author' %}</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+              <table class="table" id="authorCountTable">
+              <thead>
+                <tr>
+                  <th scope="col">{% trans 'Rank' %}</th>
+                  <th scope="col">{% trans 'Name' %}</th>
+                  <th scope="col">{% trans 'Messages' %}</th>
+                  <th scrope="col">%</th>
+                </tr>
+              </thead>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <!-- Year -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Active Years' %}</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="mostActiveYears"></canvas>
+        </div>
+        </div>
+      </div>
+
+        <div class="col-lg-4 mb-4">
+        <!-- Month -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Active Months' %}</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="mostActiveMonths"></canvas>
+          </div>
+        </div>
+        </div>
+        <!-- Day -->
+        <div class="col-lg-4 mb-4">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Active Weekdays' %}</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="mostActiveWeekdays"></canvas>
+          </div>
+        </div>
+      </div>
+      
+    </div> <!--row-->
+
+    <div class="row">
+        <!-- Hour -->
+        <div class="col-lg-12 mb-4">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Active Hours' %}</h6>
+          </div>
+          <div class="card-body">
+            <canvas id="mostActiveHours"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Hour -->
+      <div class="col-xl-3 col-lg-3 align-items-strech">
+        <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Active Days Ever' %}</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+              <table class="table" id="topDaysTable">
+              <thead>
+                <tr>
+                  <th scope="col">{% trans 'Rank' %}</th>
+                  <th scope="col">{% trans 'Date' %}</th>
+                  <th scope="col">{% trans 'Count' %}</th>
+                </tr>
+              </thead>
+              </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 align-items-strech">
+        <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Least Active Days Ever' %}</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+              <table class="table" id="worstDaysTable">
+              <thead>
+                <tr>
+                  <th scope="col">{% trans 'Rank' %}</th>
+                  <th scope="col">{% trans 'Date' %}</th>
+                  <th scope="col">{% trans 'Count' %}</th>
+                </tr>
+              </thead>
+              </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 align-items-strech">
+        <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Common Messages' %}</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+              <table class="table" id="topMessagesTable">
+              <thead>
+                <tr>
+                  <th scope="col">{% trans 'Rank' %}</th>
+                  <th scope="col">{% trans 'Date' %}</th>
+                  <th scope="col">{% trans 'Count' %}</th>
+                </tr>
+              </thead>
+              </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-3 align-items-strech">
+        <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-blue">{% trans 'Most Common Emojis' %}</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+              <table class="table" id="topEmojisTable">
+              <thead>
+                <tr>
+                  <th scope="col">{% trans 'Rank' %}</th>
+                  <th scope="col">{% trans 'Date' %}</th>
+                  <th scope="col">{% trans 'Count' %}</th>
+                </tr>
+              </thead>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="years">
+    <h1 class="text-center heading heading--md heading--blue my-5">{% trans 'Yearly Breakdown' %}</h1>
+    <div id="years-panels">
+
+    </div>
+  </section>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+    
+    <script>
+      $(".site-header__counter__text").css('color', '#0079bf');
+      $(".site-header__logo").css('color', '#0079bf');
+      var jsonData = JSON.parse('{{json_data | escapejs}}'.replace(/\bNaN\b/g, "null"));
+
+      // Indicate start & end date
+      document.getElementById("start-date").textContent = jsonData['Start_Date'];
+      document.getElementById("end-date"). textContent = jsonData['End_Date'];
+
+      setCharts(jsonData);
+
+      var yearData = JSON.parse('{{year_data | escapejs}}'.replace(/\bNaN\b/g, "null"));
+      var parent = document.getElementById('years-panels');
+
+      makeYearsHTML(yearData, parent);
+      makeYearCharts(yearData);
+
+    </script>
+{% endblock %}

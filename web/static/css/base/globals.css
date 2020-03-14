@@ -1,0 +1,87 @@
+*{
+	box-sizing: border-box;
+}
+
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+body,html{
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	color: #000;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+    font-weight: 300;
+	font-family: 'Roboto';
+}
+
+html{
+	font-family: #fff;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+body{
+ 	/* padding-bottom: 250px; Height of footer */
+	min-width: 100%;
+
+	@mixin atMedium{
+		/* padding-bottom: 155px; */
+	}
+}
+
+img{
+	height: auto;
+	max-width: 100%;
+}
+/* Typography */
+
+button,
+input,
+select,
+optgroup,
+textarea{
+	color: black;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+textarea{
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	clear: both;
+	font-weight: 300;
+	color: inherit;
+}
+
+p {
+	margin-bottom: 1.2rem;
+	color: inherit;
+}
+
+strong{
+	font-weight: 400;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote{
+	margin: 0 1.5em;
+}
+

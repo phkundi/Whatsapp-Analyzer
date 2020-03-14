@@ -1,0 +1,90 @@
+{% load static %}
+{% load i18n %}
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head id="head">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style-min.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="{% static 'all.js' %}"></script>    
+
+    <title>Chat Analyzer</title>
+
+    {% block head_extra %}
+    {% endblock %}
+
+    
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="site-header__logo" href="{% url 'homepage' %}">Whatsapp Analyzer</a>
+
+        <div class="site-header__counter">
+            <ul>
+                <!-- <li class="site-header__counter__text">{% trans 'Analysis Counter' %}: {{chat_count}} {% trans 'Chats' %} & {{message_count}} {% trans 'Messages' %}</li> -->
+                <form action="{% url 'set_language' %}" method="post" id="lang-switcher" class="lang-switcher lang-switcher--header">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    
+                    <select name="language" class="lang-dropdown" onchange="this.form.submit()">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                        <option class="lang-option" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local|title }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </ul>
+        </div>
+    </header>
+        <div class="site-content">
+        {% block content %}
+
+        {% endblock %}
+        </div>
+    
+    <footer class="footer">
+        <div class="row justify-content-center">
+            <div class="col-lg-2">
+                <a href="#faq">{% trans 'Privacy Policy' %}</a>
+            </div>
+            <div class="col-lg-2">
+                <a href="mailto:pkundr@gmail.com">{% trans 'Contact' %}</a>
+            </div>
+        </div>
+    </footer>
+
+
+{% block scripts %}
+
+{% endblock %}
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+</html>
