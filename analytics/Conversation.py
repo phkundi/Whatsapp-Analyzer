@@ -5,7 +5,7 @@ import csv
 from django.conf import settings
 
 # path for the cleaned chat
-if setting.DEBUG:
+if settings.DEBUG:
     clean_chat_path = os.path.join(settings.BASE_DIR, 'media/clean')
 else:
     clean_chat_path = '/media/clean'
